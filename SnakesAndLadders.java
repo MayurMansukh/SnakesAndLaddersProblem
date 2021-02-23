@@ -1,16 +1,14 @@
 
 public class SnakesAndLadders {
-    public static void snakeGame()  {
-  
+    public static void snakeGame() {
         System.out.println("WELCOME TO SNAKES AND LADDERS");
         System.out.println("===================================================================================");
         int player1Index = 0;
         int turn1 = 1;
         while (player1Index != 100) {
-
             int dThrow = (int)Math.floor((Math.random()*6)+1);
             System.out.println("The number on the die is " + dThrow);
-            
+
             if((player1Index+dThrow)>100)
             {
                 System.out.println("You will have to wait for the next turn, you have exceeded 100.");
@@ -39,15 +37,27 @@ public class SnakesAndLadders {
                     default:
                         System.out.println("No snakes or ladders here.");
                 }
+                        turn1++;
             }
+                if(player1Index == 100)
+                {
+                         System.out.println("\nno of dice play to win the game is " +turn1);
+                }
+                        dThrow++;
         }
+
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         SnakesAndLadders s = new SnakesAndLadders();
         s.snakeGame();
+
     }
 }
+
+
+
+
 
 
 
