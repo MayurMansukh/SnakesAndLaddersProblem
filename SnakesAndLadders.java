@@ -1,21 +1,18 @@
-
 public class SnakesAndLadders {
-    public static void snakeGame()  {
+   
         System.out.println("WELCOME TO SNAKES AND LADDERS");
         System.out.println("===================================================================================");
         int player1Index = 0;
-
+        int turn1 = 1;
         while (player1Index != 100) {
-
             int dThrow = (int)Math.floor((Math.random()*6)+1);
             System.out.println("The number on the die is " + dThrow);
-            if ((player1Index + dThrow) == 0) {
-                System.out.println("\nif you dont wnt play now, so your current postion same" + player1Index + ".");
-            }
-            else
-                {
-                 player1Index += dThrow;
-                 System.out.println(" your new position is "+player1Index+".");
+          
+            if ((player1Index + dThrow) < 0) {
+                System.out.println("\nnow you strt again on postion 0" );
+            } else {
+                player1Index += dThrow;
+                System.out.println(" your new position is "+player1Index+".");
                   switch (player1Index) {
                     case 4:
                         System.out.println("Awright! You got the ladder on square 4! Your new position is 14. Your nearest ladder is at 16,");
@@ -39,18 +36,3 @@ public class SnakesAndLadders {
                 }
             }
         }
-    }
-
-    public static void main(String[] args)  {
-        SnakesAndLadders s = new SnakesAndLadders();
-        s.snakeGame();
-    }
-}
-
-
-
-
-
-
-
-
